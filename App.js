@@ -4,13 +4,14 @@ import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState("");
+  const [courseGoals, setCourseGoals] = useState([]);
 
   function goalInputHandler(enteredText) {
     setEnteredGoalText(enteredText);
   }
 
   function addGoalHandler() {
-    console.log(enteredGoalText);
+    setCourseGoals((currentCourseGoals) => [...courseGoals, enteredGoalText]);
   }
 
   return (
@@ -24,7 +25,11 @@ export default function App() {
         <Button title="Add Goal" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        <Text>List of Goals</Text>
+        {courseGoals.map((goal) => (
+          <View style={styles.goalItem}>
+            <Text style={styles.goalText}>{goal}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
@@ -35,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 50,
     paddingHorizontal: 16,
-    backgroundColor: "dodgerblue",
+    // backgroundColor: "dodgerblue",
   },
   inputContainer: {
     flex: 1,
@@ -48,6 +53,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     borderWidth: 1,
+    borderRadius: 6,
     borderColor: "#cccccc",
     width: "70%",
     marginRight: 8,
@@ -55,5 +61,14 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 3,
+  },
+  goalItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 6,
+    backgroundColor: "dodgerblue",
+  },
+  goalText: {
+    color: "white",
   },
 });
