@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 50,
     paddingHorizontal: 16,
+    backgroundColor: "dodgerblue",
   },
   inputContainer: {
     flex: 1,
