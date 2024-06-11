@@ -29,13 +29,18 @@ function GoalInput(props) {
           placeholder="Your Course Goal."
           onChangeText={goalInputHandler}
           value={enteredGoalText}
+          color="white"
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button title="Add Goal" onPress={addGoalHandler} />
+            <Button
+              title="Add Goal"
+              onPress={addGoalHandler}
+              color="dodgerblue"
+            />
           </View>
           <View style={styles.button}>
-            <Button title="Cancel" onPress={props.onCancel} />
+            <Button title="Cancel" onPress={props.onCancel} color="#ef4e0d" />
           </View>
         </View>
       </View>
