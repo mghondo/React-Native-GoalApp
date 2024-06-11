@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 50,
     paddingHorizontal: 16,
+    backgroundColor: "#3e3e55",
     // backgroundColor: "dodgerblue",
   },
   goalsContainer: {
